@@ -1,18 +1,17 @@
 import React, {useRef} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {LoginRequest} from "../../ApiRequest/ApiRequests.js";
 import  {Toaster} from "react-hot-toast";
 
 const Login = () => {
-    const navigate=useNavigate();
-    const userEmailRef=useRef(null);
-    const userPassRef=useRef(null);
+    const userEmailRef=useRef();
+    const userPassRef=useRef();
     const DoLogin=async () => {
         const email = userEmailRef.current.value;
         const pass = userPassRef.current.value;
         const data = await LoginRequest(email,pass)
         if(data===true){
-            navigate('/');
+           window.location.href="/";
         }
 
         userEmailRef.current.value="";
@@ -34,6 +33,7 @@ const Login = () => {
                                     placeholder="User Email"
                                 />
                                 <input
+                                    type="password"
                                     ref={userPassRef}
                                     className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                     placeholder="User Password"
@@ -54,7 +54,7 @@ const Login = () => {
                                    </Link>
                                </div>
                                <div className="text-center">
-                                   <Link to="/forget-password">
+                                   <Link to="/Sent-Otp">
                                        Forget Password
                                    </Link>
                                </div>

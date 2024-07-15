@@ -1,10 +1,12 @@
 import React from 'react';
+import MasterLayout from "../Component/MasterLayout/Master-Layout.jsx";
+import New from "../Component/New/New.jsx";
 
 const NewPage = () => {
     return (
-        <div>
-            
-        </div>
+        <MasterLayout>
+            <New/>
+        </MasterLayout>
     );
 };
 

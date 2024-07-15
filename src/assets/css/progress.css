@@ -1,5 +1,10 @@
 
 ﻿/*Line Progress*/
+
+.d-none{
+    display: none;
+}
+
 .LoadingOverlay {
     position:absolute;
     display:block;
