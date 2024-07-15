@@ -6,11 +6,11 @@ import store from "../Redux/store/store.js";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../Redux/state-slice/task-slice.js";
 import {SetSummary} from "../Redux/state-slice/summary-slice.js";
 import {setProfile} from "../Redux/state-slice/profile-slice.js";
-import {useNavigate} from "react-router-dom";
 
-// const BaseUrl="https://task-manager-back-end-4xnh.vercel.app/api/v1";
 
-const BaseUrl = "http://localhost:7050/api/v1";
+const BaseUrl="https://task-manager-back-end-4xnh.vercel.app/api/v1";
+
+// const BaseUrl = "http://localhost:7050/api/v1";
 
 export async function NewTaskRequest(title, description) {
 
