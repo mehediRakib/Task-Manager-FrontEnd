@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import toast, {Toaster} from "react-hot-toast";
-import {isEmail, isEmpty} from "../../Utility/Form-helper.js";
+import {isEmail, isEmpty, isPassword} from "../../Utility/Form-helper.js";
 import {ResetPassowrd} from "../../ApiRequest/ApiRequests.js";
 import {useNavigate} from "react-router-dom";
 
@@ -14,7 +14,7 @@ const CreateNewPassword = () => {
 
         if (isEmail(email)) {
             toast.error("Required valid email");
-        } else if (isEmpty(NewPass)) {
+        } else if (isPassword(NewPass)) {
             toast.error('6 digit password required')
         } else if (NewPass !== ConfirmPass) {
             toast.error("Confirm Password doesnt match");

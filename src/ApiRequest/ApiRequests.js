@@ -238,7 +238,7 @@ export async function RecoverVerifyEmail(email){
             setUserEmail(email);
             return true;
         } else {
-            toast.error("Require valid email address");
+            toast.error("User Not Found");
             return false;
         }
 
