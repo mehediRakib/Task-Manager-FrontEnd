@@ -37,8 +37,8 @@ const Create = () => {
                     </div>
                    <div className="flex justify-center items-center mx-0 w-full mt-8">
                        <div className=" w-full max-w-2xl space-y-5">
-                           <input ref={taskNameRef} type="text" className="w-full border py-3 border-pink-300 rounded-md px-5 focus:border-2 focus:outline-none focus:border-pink-400" placeholder="Task Name"/>
-                           <textarea ref={taskDescriptionRef} className="w-full border py-3 border-pink-300 rounded-md px-5 h-24  focus:border-2 focus:outline-none focus:border-pink-400 "  placeholder="Task Description"/>
+                           <input ref={taskNameRef} type="text" className="animated fadeInUp w-full border py-3 border-pink-300 rounded-md px-5 focus:border-2 focus:outline-none focus:border-pink-400" placeholder="Task Name"/>
+                           <textarea ref={taskDescriptionRef} className="animated fadeInUp w-full border py-3 border-pink-300 rounded-md px-5 h-24  focus:border-2 focus:outline-none focus:border-pink-400 "  placeholder="Task Description"/>
                        </div>
                    </div>
                     <div className="flex justify-center mt-4 mr-6">

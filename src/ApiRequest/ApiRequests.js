@@ -8,9 +8,9 @@ import {SetSummary} from "../Redux/state-slice/summary-slice.js";
 import {setProfile} from "../Redux/state-slice/profile-slice.js";
 
 
-const BaseUrl="https://task-manager-back-end-4xnh.vercel.app/api/v1";
+// const BaseUrl="https://task-manager-back-end-4xnh.vercel.app/api/v1";
 
-// const BaseUrl = "http://localhost:7050/api/v1";
+const BaseUrl = "http://localhost:7050/api/v1";
 
 export async function NewTaskRequest(title, description) {
 
@@ -40,10 +40,12 @@ export async function NewTaskRequest(title, description) {
 
 export async function TaskListByStatus(status) {
     try {
+        store.dispatch(showLoader());
         const URL = BaseUrl + "/listTaskByStatus/" + status;
         const res = await axios.get(URL, {
             withCredentials: true
         });
+        store.dispatch(hideLoader());
         if (res.status === 200) {
             if (status === "New") {
                 store.dispatch(SetNewTask(res.data['data']));
@@ -59,18 +61,21 @@ export async function TaskListByStatus(status) {
         }
     } catch (e) {
         toast.error("Something went wrong")
+        store.dispatch(hideLoader());
 
     }
 
 }
 
 export async function LoginRequest(email, pass) {
+    store.dispatch(showLoader())
     let URL = BaseUrl + "/login";
     let postBody = {email: email, password: pass};
     try {
         const res = await axios.post(URL, postBody, {
             withCredentials: true
         });
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             setUserDetails(res.data['data']);
             toast.success("Login success");
@@ -81,6 +86,7 @@ export async function LoginRequest(email, pass) {
         }
 
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong")
         return false
     }
@@ -88,10 +94,12 @@ export async function LoginRequest(email, pass) {
 }
 
 export async function RegistrationRequest(postBody) {
+    store.dispatch(showLoader());
     let URL = BaseUrl + "/registration";
 
     try {
         let res = await axios.post(URL, postBody);
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             toast.success('Registrationl successfull');
             return true
@@ -102,6 +110,7 @@ export async function RegistrationRequest(postBody) {
             return false
         }
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong")
         return false;
     }
@@ -110,23 +119,27 @@ export async function RegistrationRequest(postBody) {
 }
 
 export async function LogOutRequest() {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/Logout";
     try {
         const res = await axios.get(URL, {
             withCredentials: true
         })
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             toast.success("Logout Successfull");
         } else {
             toast.error("Something went wrong");
         }
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong");
 
     }
 }
 
 export async function ProfileUpdateRequest(email, firstName, lastName, mobile, password, photo) {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/profileUpdate";
     try {
         const postBody = {
@@ -142,6 +155,7 @@ export async function ProfileUpdateRequest(email, firstName, lastName, mobile, p
         const res = await axios.post(URL, postBody, {
             withCredentials: true
         })
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             toast.success("Profile Updated Successfull");
             setUserDetails(userDetails);
@@ -153,6 +167,7 @@ export async function ProfileUpdateRequest(email, firstName, lastName, mobile, p
             return false
         }
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong");
         return false
     }
@@ -160,27 +175,32 @@ export async function ProfileUpdateRequest(email, firstName, lastName, mobile, p
 }
 
 export async function summaryRequest() {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/taskStatusCount";
     try {
         const res = await axios.get(URL, {
             withCredentials: true
         })
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             store.dispatch(SetSummary(res.data['data']));
         } else {
             toast.error("Something went wront!")
         }
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong")
     }
 }
 
 export async function DeleteTaskRequest(id) {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/deleteTask/" + id;
     try {
         const res = await axios.get(URL, {
             withCredentials: true
         })
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             toast.success("Delete successfull")
         } else {
@@ -188,34 +208,40 @@ export async function DeleteTaskRequest(id) {
         }
 
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong")
     }
 
 }
 
 export async function updateStatus(id, status) {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/updateStatus/" + id + "/" + status;
     try {
         const res = await axios.post(URL, {}, { // Added empty object as the second parameter
             withCredentials: true
         });
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             toast.success("Status successfully updated");
         } else {
             toast.error("Something went wrong");
         }
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong");
     }
 }
 
 
 export async function ProfileDetails() {
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/profileDetails";
     try {
         const res = await axios.get(URL, {
             withCredentials: true
         })
+        store.dispatch(hideLoader());
         if (res.data['status'] === 'success') {
             store.dispatch(setProfile(res.data['data'][0]));
         } else {
@@ -223,17 +249,21 @@ export async function ProfileDetails() {
         }
 
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong!");
     }
 }
 
 
 export async function RecoverVerifyEmail(email){
+    store.dispatch(showLoader());
     const URL = BaseUrl + "/Recover-verify-email";
     try {
         const res = await axios.post(URL, email,{
             withCredentials: true
         })
+
+        store.dispatch(hideLoader())
         if (res.data['status'] === 'success') {
             setUserEmail(email);
             return true;
@@ -243,18 +273,21 @@ export async function RecoverVerifyEmail(email){
         }
 
     } catch (e) {
+        store.dispatch(hideLoader());
         toast.error("Something went wrong!");
         return false;
     }
 }
 
 export async function verifyOTP(otp){
+    store.dispatch(showLoader());
     const email=getUserEmail()['email'];
     const URL=BaseUrl+'/Verify-OTP/'+email+"/"+otp;
     try{
         const res=await axios.get(URL,{
             withCredentials:true
         })
+        store.dispatch(hideLoader());
         if(res.data['status']==='success'){
             toast.success("OTP verification successfull");
             return true;
@@ -263,12 +296,14 @@ export async function verifyOTP(otp){
             return false
         }
     }catch (e) {
+        store.dispatch(hideLoader());
            toast.error("Something went wrong");
            return false;
     }
 }
 
 export async function ResetPassowrd(email,password){
+    store.dispatch(showLoader());
     const postBody={
         email:email,
         password:password
@@ -278,6 +313,7 @@ export async function ResetPassowrd(email,password){
         const res=await axios.post(URL,postBody,{
             withCredentials:true
         })
+        // store.dispatch(hideLoader());
         if(res.data['status']==='success'){
             toast.success("Password reset successfull")
             return true;
@@ -286,6 +322,7 @@ export async function ResetPassowrd(email,password){
             return false
         }
     }catch (e) {
+        // store.dispatch(hideLoader());
         toast.error("Something went wrong")
         return false
 

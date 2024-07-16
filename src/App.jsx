@@ -7,7 +7,7 @@ import ProfilePage from "./Pages/Profile-Page.jsx";
 import CreatePage from "./Pages/Create-page.jsx";
 import LoginPage from "./Pages/Login-Page.jsx";
 import RegistrationPage from "./Pages/Registration-Page.jsx";
-// import FullScreenLoader from "./Component/MasterLayout/Full-screen-Loader.jsx";
+import FullScreenLoader from "./Component/MasterLayout/Full-screen-Loader.jsx";
 import cookies from 'js-cookie'
 import CompletedPage from "./Pages/Completed-Page.jsx";
 import CancelPage from "./Pages/Cancel-Page.jsx";
@@ -36,7 +36,7 @@ const App = () => {
 
                     </Routes>
                 </BrowserRouter>
-                {/*<FullScreenLoader/>*/}
+                <FullScreenLoader/>
             </Fragment>
         );
     }else {
@@ -53,7 +53,7 @@ const App = () => {
                         <Route path="/create-password" element={<CreateNewPassword/>}/>
                     </Routes>
                 </BrowserRouter>
-                {/*<FullScreenLoader/>*/}
+                <FullScreenLoader/>
             </Fragment>
         );
     }

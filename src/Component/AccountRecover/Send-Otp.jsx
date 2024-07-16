@@ -33,11 +33,11 @@ const SendOtp = () => {
                             <h5 className="text-xl font-serif font-semibold">Email Address</h5>
                         </div>
                         <div className="pt-5">
-                            <label className="block text-xs font-semibold mb-2 ">Your email address</label>
+                            <label className="block text-xs font-semibold mb-2  animated fadeInUp">Your email address</label>
                             <input
                                 ref={(input) => emailRef = input}
                                 placeholder="User Email"
-                                className="w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
+                                className=" animated fadeInUp w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
                             />
                         </div>
                         <div className="pt-5 ">

@@ -40,10 +40,10 @@ const VerifyOtp = () => {
                 <div className="w-4/12 h-auto shadow-md rounded-lg bg-white border pb-5">
                     <div className="p-10 w-full">
                         <div>
-                            <h5 className="text-xl font-serif font-semibold">OTP Verification</h5>
+                            <h5 className="text-xl font-serif font-semibold  animated fadeInUp">OTP Verification</h5>
                         </div>
-                        <div className="pt-5">
-                            <label className="block text-xs text-gray-600 mb-2 ">A 6 digit code has been sent to your
+                        <div className="pt-5 ">
+                            <label className="block text-xs text-gray-600 mb-2  animated fadeInUp">A 6 digit code has been sent to your
                                 account</label>
                             <ReactCodeInput onChange={(e) => setOtp(e)} inputStyle={defaultStyle} type='text'
                                             fields={6}/>

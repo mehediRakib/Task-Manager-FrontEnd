@@ -1,12 +1,9 @@
 import React, {Fragment} from 'react';
-import {useSelector} from "react-redux";
 
-const FullScreenLoader = () => {
-
-    const loader=useSelector((state)=>state.settings.loader)
+const LazyLoader = () => {
     return (
         <Fragment>
-            <div className={`${loader} LoadingOverlay`}>
+            <div  className="LoadingOverlay">
                 <div className="Line-Progress">
                     <div className="indeterminate"></div>
                 </div>
@@ -15,4 +12,4 @@ const FullScreenLoader = () => {
     );
 };
 
-export default FullScreenLoader;
+export default LazyLoader;

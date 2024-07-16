@@ -1,11 +1,15 @@
-import React from 'react';
-import Dashboard from "../Component/Dashboard/Dashboard.jsx";
+import React, {Fragment, lazy} from 'react';
+import MasterLayout from "../Component/MasterLayout/Master-Layout.jsx";
+// import LazyLoader from "../Component/MasterLayout/LazyLoader.jsx";
+const Dashboard=lazy(()=> import("../Component/Dashboard/Dashboard.jsx"))
 
 const DashboardPage = () => {
     return (
-        <div>
-            <Dashboard/>
-        </div>
+        <Fragment>
+            <MasterLayout>
+                    <Dashboard/>
+            </MasterLayout>
+        </Fragment>
     );
 };
 

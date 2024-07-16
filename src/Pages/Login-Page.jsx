@@ -1,11 +1,16 @@
-import React from 'react';
-import Login from "../Component/Login/Login.jsx";
+import React, {Fragment, lazy, Suspense} from 'react';
+
+const Login =lazy(() => import("../Component/Login/Login.jsx"));
+
+import LazyLoader from "../Component/MasterLayout/LazyLoader.jsx";
 
 const LoginPage = () => {
     return (
-        <div>
-            <Login/>
-        </div>
+        <Fragment>
+            <Suspense fallback={<LazyLoader/>}>
+                <Login/>
+            </Suspense>
+        </Fragment>
     );
 };
 

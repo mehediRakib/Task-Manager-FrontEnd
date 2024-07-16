@@ -36,27 +36,27 @@ const CreateNewPassword = () => {
                             <h5 className="text-xl font-serif font-semibold">SET NEW PASSWORD</h5>
                         </div>
                         <div className="pt-5">
-                            <label className="block text-xs font-semibold mb-2 ">Your email address</label>
+                            <label className="block text-xs font-semibold mb-2  animated fadeInUp ">Your email address</label>
                             <input
                                 ref={(input) => emailRef = input}
                                 placeholder="User Email"
-                                className="w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
+                                className=" animated fadeInUp w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
                             />
 
-                            <label className="block text-xs font-semibold mb-2 pt-5 ">New Password</label>
+                            <label className="block text-xs font-semibold mb-2 pt-5  animated fadeInUp ">New Password</label>
                             <input
                                 ref={(input) => newPassRef = input}
                                 type="password"
                                 placeholder="New Password"
-                                className="w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
+                                className=" animated fadeInUp w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
                             />
 
-                            <label className="block text-xs font-semibold mb-2 pt-5">Confirm Password</label>
+                            <label className="block text-xs font-semibold mb-2 pt-5  animated fadeInUp">Confirm Password</label>
                             <input
                                 ref={(input) => confirmPassRef = input}
                                 placeholder="Confirm Password"
                                 type="password"
-                                className="w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
+                                className=" animated fadeInUp w-full py-2 rounded-lg bg-white border border-pink-400 focus:outline-none focus:border-2 focus:border-pink-600 px-4"
                             />
                         </div>
                         <div className="pt-5 ">

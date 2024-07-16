@@ -51,35 +51,35 @@ const Registration = () => {
                             <div className="w-full max-w-xl space-y-6">
                                 <input
                                    onChange={(e)=>setEmail(e.target.value)}
-                                    className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
+                                    className=" animated fadeInUp w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                     placeholder="User Email"
                                 />
                                 <input
                                     onChange={(e)=>setFirstName(e.target.value)}
-                                    className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
+                                    className=" animated fadeInUp w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                     placeholder="First Name"
                                 />
 
                                 <input
                                     onChange={(e)=>setLastName(e.target.value)}
-                                    className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
+                                    className=" animated fadeInUp w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                     placeholder="Last Name"
                                 />
                                 <input
                                     onChange={(e)=>setMobile(e.target.value)}
-                                    className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
+                                    className=" animated fadeInUp w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                     placeholder="Mobile"
                                 />
                                 <input
                                     onChange={(e)=>setPass(e.target.value)}
                                    placeholder="Password"
-                                   className="w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
+                                   className=" animated fadeInUp w-full py-2 px-5 rounded-md border border-pink-400 focus:border-2 focus:outline-none focus:border-pink-400 "
                                 />
                                 <input
                                     type="button"
                                     onClick={DoRegistration}
                                     value="Next"
-                                    className="w-full bg-pink-700 rounded-md py-2 px-5 text-white cursor-pointer focus:outline-none mt-4 font-semibold hover:bg-pink-600"
+                                    className=" animated fadeInUp w-full bg-pink-700 rounded-md py-2 px-5 text-white cursor-pointer focus:outline-none mt-4 font-semibold hover:bg-pink-600"
                                 />
                             </div>
                         </div>
