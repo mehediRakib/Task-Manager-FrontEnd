@@ -8,7 +8,7 @@ import {SetSummary} from "../Redux/state-slice/summary-slice.js";
 import {setProfile} from "../Redux/state-slice/profile-slice.js";
 
 
-const BaseUrl="https://task-manager-back-9pm5tndne-mehedirakibs-projects.vercel.app/api/v1";
+const BaseUrl="https://task-manager-back-3qkrod41e-mehedirakibs-projects.vercel.app/api/v1";
 
 // const BaseUrl = "http://localhost:7050/api/v1";
 
