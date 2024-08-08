@@ -24,9 +24,9 @@ const New = () => {
 
     const NewTaskList = useSelector((state) => state.task.New)
     return (
-        <div className="container mt-8">
+        <div className="container mt-8 ">
             <div className="">
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5">
                     <div className="ml-10">
                         <h3 className="font-semibold text-xl">New Task</h3>
                     </div>
@@ -43,34 +43,33 @@ const New = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex flex-wrap mx-4 px-2">
-                    {
-                        NewTaskList.map((item, i) => (
-                        <div key={i.toString()} className="w-1/3 px-4 mt-10 mb-8">
-                            <div className="h-60 shadow-md bg-white rounded-md">
-                                <div className="ml-4 pt-4">
-                                    <div className="font-semibold font-sans text-lg  animated fadeInUp">
+                <div className="flex flex-wrap mx-4 px-2 mt-5">
+                    {NewTaskList.map((item, i) => (
+                        <div key={i.toString()} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8">
+                            <div className="h-full shadow-md bg-white rounded-md flex flex-col">
+                                <div className="p-4 flex-1">
+                                    <div className="font-semibold font-sans text-lg mb-2 animated fadeInUp">
                                         <h4>{item.title}</h4>
                                     </div>
-                                    <div className="mt-4 h-28 text-gray-600 overflow-y-auto">
-                                        <p className=" animated fadeInUp">{item.description}</p>
+                                    <div className="h-28 text-gray-600 overflow-y-auto mb-4">
+                                        <p className="animated fadeInUp">{item.description}</p>
                                     </div>
                                 </div>
-                                <div className="mt-6 ml-4 flex justify-between">
-                                    <div className="flex space-x-2 text-gray-700  animated fadeInUp">
+                                <div className="flex justify-between items-center p-4 bg-gray-100 border-t border-gray-300">
+                                    <div className="flex items-center space-x-2 text-gray-700 animated fadeInUp">
                                         <AiTwotoneCalendar className="w-5 h-5" />
                                         <p>{item.createdDate}</p>
                                     </div>
-                                    <div className="flex space-x-6 mr-8  animated fadeInUp">
-                                        <button onClick={()=>{StatusChange(item._id,item.status)}} className="flex items-center justify-center p-1 text-white rounded-full transition duration-300 ease-in-out transform hover:bg-pink-400 hover:scale-105 hover:rotate-12 hover:shadow-lg">
+                                    <div className="flex space-x-4">
+                                        <button onClick={() => StatusChange(item._id, item.status)} className="p-2 text-white rounded-full transition duration-300 ease-in-out transform hover:bg-pink-400 hover:scale-105 hover:rotate-12 hover:shadow-lg">
                                             <CiEdit className="text-pink-900 w-5 h-5" />
                                         </button>
-                                        <button onClick={()=>DeleteTask(item['_id'])} className="flex items-center justify-center p-1 text-white rounded-full transition duration-300 ease-in-out transform hover:bg-pink-400 hover:scale-105 hover:rotate-12 hover:shadow-lg">
+                                        <button onClick={() => DeleteTask(item['_id'])} className="p-2 text-white rounded-full transition duration-300 ease-in-out transform hover:bg-pink-400 hover:scale-105 hover:rotate-12 hover:shadow-lg">
                                             <AiOutlineDelete className="text-pink-900 w-5 h-5" />
                                         </button>
                                     </div>
-                                    <div className="py-1 bg-cyan-500 rounded-md mr-6">
-                                        <p className="px-4 text-white  animated fadeInUp">New</p>
+                                    <div className="py-1 bg-cyan-500 rounded-md">
+                                        <p className="px-4 text-white animated fadeInUp">New</p>
                                     </div>
                                 </div>
                             </div>

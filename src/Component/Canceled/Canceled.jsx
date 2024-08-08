@@ -27,7 +27,7 @@ const Canceled =()=> {
     return (
         <div className="container mt-8">
             <div className="">
-                <div className="flex justify-between">
+                <div className="flex justify-between pb-5 ">
                     <div className="ml-10">
                         <h3 className="font-semibold text-xl">Task Canceled</h3>
                     </div>
@@ -46,7 +46,7 @@ const Canceled =()=> {
                 </div>
                 <div className="flex flex-wrap mx-4 px-2">
                     {CanceledTaskList.map((item, i) => (
-                        <div key={i.toString()} className="w-1/3 px-4 mt-10 mb-8">
+                        <div key={i.toString()} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8">
                             <div className="h-60 shadow-md bg-white rounded-md">
                                 <div className="ml-4 pt-4">
                                     <div className="font-semibold font-sans text-lg  animated fadeInUp">
@@ -56,7 +56,7 @@ const Canceled =()=> {
                                         <p className=" animated fadeInUp">{item.description}</p>
                                     </div>
                                 </div>
-                                <div className="mt-6 ml-4 flex justify-between">
+                                <div className="flex justify-between items-center p-4 bg-gray-100 border-t border-gray-300 mt-2">
                                     <div className="flex space-x-2 text-gray-700  animated fadeInUp">
                                         <AiTwotoneCalendar className="w-5 h-5" />
                                         <p>{item.createdDate}</p>

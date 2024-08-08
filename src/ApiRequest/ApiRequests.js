@@ -8,20 +8,16 @@ import {SetSummary} from "../Redux/state-slice/summary-slice.js";
 import {setProfile} from "../Redux/state-slice/profile-slice.js";
 
 
-const BaseUrl="https://task-manager-back-3qkrod41e-mehedirakibs-projects.vercel.app/api/v1";
 
-// const BaseUrl = "http://localhost:7050/api/v1";
+const BaseUrl = "http://localhost:7050/api/v1";
+// const BaseUrl="https://task-manager-back-end-4xnh-epekqvab0-mehedirakibs-projects.vercel.app/api/v1";
 
 export async function NewTaskRequest(title, description) {
-
     let URL = BaseUrl + "/createTask";
-    let PostBody = {title: title, description: description, status: "New"}
+    let PostBody = {title: title, description: description, status: "New"};
     try {
-
         store.dispatch(showLoader());
-        const res = await axios.post(URL, PostBody, {
-            withCredentials: true
-        });
+        const res = await axios.post(URL, PostBody, { withCredentials: true });
         store.dispatch(hideLoader());
         if (res.status === 200 && res.data['status'] === 'success') {
             toast.success("New Task Created");
@@ -30,7 +26,6 @@ export async function NewTaskRequest(title, description) {
             toast.error("Something went wrong");
             return false;
         }
-
     } catch (e) {
         toast.error("Something went wrong");
         store.dispatch(hideLoader());

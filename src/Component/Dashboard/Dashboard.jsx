@@ -10,8 +10,8 @@ const Dashboard = () => {
     }, []);
     const summaryList =  useSelector((state) => state.summary.value);
     return (
-                <div className="container mt-5">
-                    <div className="grid grid-cols-4 px-2">
+                <div className="container mt-5 mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-2">
                         {
                             summaryList.map((item, i) =>
                                 <div  key={i.toString()} className=" px-2 mb-8 ">

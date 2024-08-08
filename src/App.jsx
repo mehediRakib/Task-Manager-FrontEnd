@@ -19,44 +19,37 @@ const App = () => {
     const cookie=cookies.get('token');
     console.log(cookie)
 
-    if(cookie){
-        return (
-            <Fragment>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<DashboardPage/>}/>
-                        <Route path="/All" element={<NewPage/>}/>
-                        <Route path="/progress" element={<ProgressPage/>}/>
-                        <Route path="/create-task" element={<CreatePage/>}/>
-                        <Route path="/new-task" element={<NewPage/>}/>
-                        <Route path="/completed" element={<CompletedPage/>}/>
-                        <Route path="/canceled" element={<CancelPage/>}/>
-                        <Route path="/registration" element={<RegistrationPage/>}/>
-                        <Route path="/Profile" element={<ProfilePage/>}/>
-
-                    </Routes>
-                </BrowserRouter>
-                <FullScreenLoader/>
-            </Fragment>
-        );
-    }else {
-        return (
-            <Fragment>
-                <BrowserRouter>
-                    <Routes>
-                        <Route path="/" element={<Navigate to="/login"/>}/>
-                        <Route path="/login" element={<LoginPage/>}/>
-                        <Route path="/registration" element={<RegistrationPage/>}/>
-
-                        <Route path="/Sent-Otp" element={<SendOtp/>}/>
-                        <Route path="/verify-otp" element={<VerifyOtp/>}/>
-                        <Route path="/create-password" element={<CreateNewPassword/>}/>
-                    </Routes>
-                </BrowserRouter>
-                <FullScreenLoader/>
-            </Fragment>
-        );
-    }
+    return (
+        <Fragment>
+            <BrowserRouter>
+                <Routes>
+                    {cookie ? (
+                        <>
+                            <Route path="/" element={<DashboardPage />} />
+                            <Route path="/all" element={<NewPage />} />
+                            <Route path="/progress" element={<ProgressPage />} />
+                            <Route path="/create-task" element={<CreatePage />} />
+                            <Route path="/new-task" element={<NewPage />} />
+                            <Route path="/completed" element={<CompletedPage />} />
+                            <Route path="/canceled" element={<CancelPage />} />
+                            <Route path="/registration" element={<RegistrationPage />} />
+                            <Route path="/profile" element={<ProfilePage />} />
+                        </>
+                    ) : (
+                        <>
+                            <Route path="/" element={<Navigate to="/login" />} />
+                            <Route path="/login" element={<LoginPage />} />
+                            <Route path="/registration" element={<RegistrationPage />} />
+                            <Route path="/sent-otp" element={<SendOtp />} />
+                            <Route path="/verify-otp" element={<VerifyOtp />} />
+                            <Route path="/create-password" element={<CreateNewPassword />} />
+                        </>
+                    )}
+                </Routes>
+            </BrowserRouter>
+            <FullScreenLoader/>
+        </Fragment>
+    );
 };
 
 export default App;
