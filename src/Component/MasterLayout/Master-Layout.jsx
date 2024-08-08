@@ -107,7 +107,7 @@ const MasterLayout = (props) => {
                 </div>
                 <div className="flex min-h-screen">
                     <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out md:relative md:translate-x-0 w-64 md:w-1/6 shadow-lg border-r pt-10 bg-white ${hideBar ? '' : 'hidden'}`}>
-                        <div className="py-4">
+                        <div className="py-4 mt-8">
                             <Link to="/">
                                 <div className="pl-5 w-full hover:bg-pink-100 hover:border-l-4 hover:border-l-pink-500 py-3 hover-underline-animation mt-3">
                                     <div className="flex space-x-2 font-sans text-sm opacity-75">
